@@ -21,7 +21,12 @@ export default {
         return instance.get(`product/`, {params:params})
         .then(res => {
             return res["data"]
+        }).catch((err)=>{
+            return {
+                "error":err.data ? err.data: "No se puede conectar al Servidor"
+            }
+
         })
-        .then(data => data)
+        // .then(data => data)
     }
 }

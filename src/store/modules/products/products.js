@@ -28,9 +28,14 @@ const productModule = {
         async fetchProducts(context, search_param, query_params) {
             context.commit("loading",null,{ root: true })
             const data = await api.products({ search: search_param })
-            context.commit("setProducts", data["results"])
-            context.commit("setResultsCount", data["count"])
-            context.commit("setProductObj", data)
+            if (data?.error){
+                context.commit("setCurrentError", data.error, { root: true })
+            }
+            if (data?.results){
+                context.commit("setProducts", data["results"])
+                context.commit("setResultsCount", data["count"])
+                context.commit("setProductObj", data)
+            }
         },
         async fetchFilterPrice(context,) {
 

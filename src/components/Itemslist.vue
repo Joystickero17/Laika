@@ -62,7 +62,7 @@
 						<!-- /store products -->
 						<!-- store bottom filter -->
 						<div class="store-filter clearfix">
-							<span class="store-qty">{{getProductsObj["count"] >= 30 ? 30:getProductsObj["count"]}} productos de {{getProductsObj["count"]}}</span>
+							<span v-if="getProductsObj?.count" class="store-qty">{{getProductsObj["count"] >= 30 ? 30:getProductsObj["count"]}} productos de {{getProductsObj["count"]}}</span>
 							<ul class="store-pagination">
 								<!-- <li class="active">1</li> -->
 								<li v-for="page in getProductsObj?.total_pages" v-bind:key="page">
@@ -84,6 +84,11 @@ export default {
 	components:{
 		SkeletonLoader
 	},
+	mounted(){
+		if (!this.items) {
+			this.items = {}
+		}
+	},
     data: ()=>{
         return {
         }
@@ -96,7 +101,8 @@ export default {
 			"getProductsCount",
 			"getProductsObj",
 		]),
-		...mapGetters(["getLoadingStatus"])
+		...mapGetters(["getLoadingStatus",
+					   "getCurrentErrors"])
 	}
 }
 </script>
