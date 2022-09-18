@@ -15,16 +15,24 @@ import InteractionModal from './components/InteractionModal.vue';
 		<header>
 			<!-- TOP HEADER -->
 			<div id="top-header">
-				<div class="container">
-					<ul class="header-links pull-left">
-						<li><a href="#"><i class="fa fa-phone"></i> +58 424-4713056</a></li>
-						<li><a href="#"><i class="fa fa-envelope-o"></i> jorgeram822@gmail.com</a></li>
-						<li><a href="#"><i class="fa fa-map-marker"></i> 4WFQ+C58, Troncal11, Tocuyito 2035, Carabobo, Venezuela</a></li>
-					</ul>
-					<ul class="header-links pull-right">
-						<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
-						<li><a href="#"><i class="fa fa-user-o"></i> Mi Cuenta</a></li>
-					</ul>
+				<div class="container-fluid p-2">
+					<div class="row">
+						<div class="d-none d-md-block col-12 col-md-9 col-lg-9">
+							<ul class="header-links pull-left d-flex nowrap">
+								<li><a href="#"><i class="fa fa-phone"></i> +58 424-4713056</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i> jorgeram822@gmail.com</a></li>
+								<li><a href="#"><i class="fa fa-map-marker text-nowrap"></i> 4WFQ+C58, Troncal11, Tocuyito 2035, Carabobo, Venezuela</a>
+								</li>
+							</ul>
+						</div>
+						<div class="col-12 col-md-3 col-lg-3">
+							<ul class="header-links pull-right d-flex justify-content-rigth">
+								<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+								<li><a href="#"><i class="fa fa-user-o"></i> Mi Cuenta</a></li>
+							</ul>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 			<!-- /TOP HEADER -->

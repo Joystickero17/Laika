@@ -21,7 +21,8 @@ import store from '../store';
     export default {
         methods:{
             search(event){
-                store.dispatch("fetchProducts", event.target.value)
+                store.commit("productModule/setSearchParam", event.target.value)
+                store.dispatch("productModule/fetchProducts")
             }
         }
     }
