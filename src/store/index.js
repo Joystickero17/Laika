@@ -7,6 +7,11 @@ import api from "@/utils/api"
 const store = createStore({
     state:{
         routeName:"",
+        randomSearchMessages:[
+            "¿Qué se te daño?",
+            "Escribe y mira la magia",
+            "¿lo buscas? lo encuentras!",
+        ],
         isLoading: false,
         errors: []
     },
@@ -16,6 +21,9 @@ const store = createStore({
         },
         getCurrentErrors(state){
             return state.errors
+        },
+        getCurrentRandomMessage(state){
+            return state.randomSearchMessages[Math.floor(Math.random()*state.randomSearchMessages.length)]
         }
     },
     actions:{},
