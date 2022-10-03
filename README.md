@@ -1,4 +1,6 @@
-# laika3
+# Multistore Vue Front (Laika)
+
+Front hecho en Vue.js con Vuex, para una multitienda
 
 ## Project setup
 ```
