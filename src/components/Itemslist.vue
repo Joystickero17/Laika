@@ -28,7 +28,9 @@
 		<div v-for="product in this.items" :key="product.id" class="col-md-4 col-xs-6">
 			<div class="product">
 				<div class="product-img">
-					<img src="../img/product01.png" alt="">
+					
+					<img :src="product.thumbnail == null ? require('../img/no-photo.png') : product.thumbnail" alt="">
+					<!-- <img src="../img/no-photo.png" alt=""> -->
 					<div class="product-label">
 						<span v-if="product.get_discount" class="sale">-{{product.discount}}%</span>
 						<span class="new">{{product.verbose_condition}}</span>
