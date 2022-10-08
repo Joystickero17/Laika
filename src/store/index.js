@@ -8,7 +8,7 @@ const store = createStore({
     state:{
         routeName:"",
         randomSearchMessages:[
-            "¿Qué se te daño?",
+            "¿Qué se te dañó?",
             "Escribe y mira la magia",
             "¿lo buscas? lo encuentras!",
         ],

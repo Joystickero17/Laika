@@ -38,7 +38,7 @@ const productModule = {
 
     },
     actions: {
-        async fetchProducts({commit, state},{search_param, store}) {
+        async fetchProducts({commit, state}, {search_param, store} = {}) {
             commit("loading", null, { root: true })
             let params = {
                 "min_price": state.priceMinFilter,

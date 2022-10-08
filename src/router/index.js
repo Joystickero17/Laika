@@ -3,6 +3,8 @@ import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
 import StoreView from '../views/StoreView.vue'
 import NotFound from '../components/NotFound.vue'
+import AdminView from '../views/AdminView.vue'
+import ProductsList from '../views/ProductsList.vue'
 
 const router = createRouter({
   history: createWebHistory(),
@@ -10,12 +12,24 @@ const router = createRouter({
     {
       path: '/store/:id?',
       name: 'store_home',
-      component: StoreView
+      component: StoreView,
+      children:[
+        {
+          path:"",
+          name:"store_products",
+          component: ProductsList
+        }
+      ]
     },
     {
       path: '/',
       name: 'home',
       component: HomeView
+    },
+    {
+      path: '/admin',
+      name: 'admin_home',
+      component: AdminView
     },
     // {
     //   path: '/about',

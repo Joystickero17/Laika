@@ -10,14 +10,6 @@
 					<option value="1">Recientes</option>
 				</select>
 			</label>
-
-			<label>
-				Mostrar:
-				<select class="input-select">
-					<option value="0">20</option>
-					<option value="1">50</option>
-				</select>
-			</label>
 		</div>
 	</div>
 	<!-- /store top filter -->
