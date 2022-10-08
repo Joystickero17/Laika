@@ -38,23 +38,24 @@ const productModule = {
 
     },
     actions: {
-        async fetchProducts(context, search_param) {
-            context.commit("loading", null, { root: true })
+        async fetchProducts({commit, state},{search_param, store}) {
+            commit("loading", null, { root: true })
             let params = {
-                "min_price": context.state.priceMinFilter,
-                "max_price": context.state.priceMaxFilter,
-                "free_products": context.state.seeFreeProducts
+                "min_price": state.priceMinFilter,
+                "max_price": state.priceMaxFilter,
+                "free_products": state.seeFreeProducts,
+                "slug_store": store
             }
             console.log(params)
-            let search = search_param ? search_param : context.getters.getSearchParam
+            let search = search_param ? search_param : state.searchParam
             const data = await api.products({ search: search, ...params })
             if (data?.error) {
-                context.commit("setCurrentError", data.error, { root: true })
+                commit("setCurrentError", data.error, { root: true })
             }
             if (data?.results) {
-                context.commit("setProducts", data["results"])
-                context.commit("setResultsCount", data["count"])
-                context.commit("setProductObj", data)
+                commit("setProducts", data["results"])
+                commit("setResultsCount", data["count"])
+                commit("setProductObj", data)
             }
         }
     },

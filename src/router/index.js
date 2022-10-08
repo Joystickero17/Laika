@@ -8,8 +8,8 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/store',
-      name: 'store',
+      path: '/store/:id?',
+      name: 'store_home',
       component: StoreView
     },
     {

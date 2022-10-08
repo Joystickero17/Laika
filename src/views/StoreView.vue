@@ -26,7 +26,8 @@ export default {
     return {
     }
   },mounted(){
-    this.$store.dispatch("productModule/fetchProducts")
+    console.log(this.$route.params)
+    this.$store.dispatch("productModule/fetchProducts", {store:this.$route.params?.id})
   },
   computed:{
     ...mapGetters("productModule",["getProducts"])
